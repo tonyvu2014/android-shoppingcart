@@ -1,2 +1,2 @@
 # android-shoppingcart
-An implementation of android shopping cart for Android
+An implementation of android shopping cart library project for Android
