@@ -4,7 +4,7 @@ package com.android.tonyvu.sc.exception;
  * Throw this exception to indicate invalid quantity to be used on a shopping cart product.
  * 
  */
-public class QuantityOutOfRangeException extends Exception {
+public class QuantityOutOfRangeException extends RuntimeException {
 
 	private static final long serialVersionUID = 44L;
 	
