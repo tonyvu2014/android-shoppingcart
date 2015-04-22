@@ -1,7 +1,7 @@
 # android-shoppingcart
 An implementation of android shopping cart library project for Android.
 
-To use this library, follow this step:
+To use this library, follow these steps:
 
 1) Download and include this as library project
 
