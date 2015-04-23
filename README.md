@@ -11,11 +11,11 @@ To use this library, follow these steps:
 
 and also override equals() and hashCode() methods.
 
-3) Now from anywhere in your application you can retrieve the shopping cart with 
+3) Now from anywhere in your application, you can retrieve the shopping cart with 
 
   Cart cart = CartHelper.getCart();
 
-  After retrieving the shopping cart, the library provide with with various methods to manipulate the shopping cart like adding, removing, updating products or clear the entire shopping cart. 
+  After retrieving the shopping cart, the library provides various methods to manipulate the shopping cart like adding, removing, updating products or clear the entire shopping cart. 
 
 For an example on how to use this library, please see
 https://github.com/tonyvu2014/android-shoppingcart-demo
