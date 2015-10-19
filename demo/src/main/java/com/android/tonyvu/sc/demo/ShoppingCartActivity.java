@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +23,7 @@ import com.android.tonyvu.sc.model.Cart;
 import com.android.tonyvu.sc.model.Saleable;
 import com.android.tonyvu.sc.util.CartHelper;
 
-public class ShoppingCartActivity extends Activity {
+public class ShoppingCartActivity extends AppCompatActivity {
     private static final String TAG = "ShoppingCartActivity";
 
     ListView lvCartItems;

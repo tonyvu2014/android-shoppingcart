@@ -1,8 +1,8 @@
 package com.android.tonyvu.sc.demo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +16,7 @@ import com.android.tonyvu.sc.demo.model.Product;
 import com.android.tonyvu.sc.model.Cart;
 import com.android.tonyvu.sc.util.CartHelper;
 
-public class ProductActivity extends Activity {
+public class ProductActivity extends AppCompatActivity {
     private static final String TAG = "ProductActivity";
 
     TextView tvProductName;
