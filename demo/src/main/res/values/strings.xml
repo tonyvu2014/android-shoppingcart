@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Android-ShoppingCart-Demo</string>
-    
+
     <string name="product_list">Product List</string>
     <string name="shopping_cart">Shopping Cart</string>
     <string name="name">Name</string>
@@ -16,5 +16,5 @@
     <string name="remove">Remove</string>
     <string name="clear_cart">Clear Cart</string>
     <string name="shop">Shop</string>
-    
+
 </resources>

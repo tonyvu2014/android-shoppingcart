@@ -14,35 +14,34 @@ import com.android.tonyvu.sc.demo.constant.Constant;
 import com.android.tonyvu.sc.demo.model.Product;
 
 public class MainActivity extends Activity {
-	
-	private static final String TAG = "MainActivity";
+    private static final String TAG = "MainActivity";
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		ListView lvProducts = (ListView)findViewById(R.id.lvProducts);
-		lvProducts.addHeaderView(getLayoutInflater().inflate(R.layout.product_list_header, lvProducts, false));
-		
-		ProductAdapter productAdapter = new ProductAdapter(this);
-		productAdapter.updateProducts(Constant.PRODUCT_LIST);
-		
-		lvProducts.setAdapter(productAdapter);
-		
-		lvProducts.setOnItemClickListener(new OnItemClickListener() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				Product product = Constant.PRODUCT_LIST.get(position-1);
-				Intent intent = new Intent(MainActivity.this, ProductActivity.class);
-				Bundle bundle = new Bundle();
-				bundle.putSerializable("product", product);
-				Log.d(TAG, "View product: " + product.getName());
-				intent.putExtras(bundle);
-				startActivity(intent);				
-			}
-		});
-	}
+        ListView lvProducts = (ListView) findViewById(R.id.lvProducts);
+        lvProducts.addHeaderView(getLayoutInflater().inflate(R.layout.product_list_header, lvProducts, false));
+
+        ProductAdapter productAdapter = new ProductAdapter(this);
+        productAdapter.updateProducts(Constant.PRODUCT_LIST);
+
+        lvProducts.setAdapter(productAdapter);
+
+        lvProducts.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Product product = Constant.PRODUCT_LIST.get(position - 1);
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("product", product);
+                Log.d(TAG, "View product: " + product.getName());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+    }
 }
