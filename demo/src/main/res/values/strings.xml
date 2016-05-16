@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android-ShoppingCart-Demo</string>
+
+    <string name="product_list">Product List</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="name">Name</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="view">View</string>
+    <string name="action">Action</string>
+    <string name="order">Order</string>
+    <string name="price">Price</string>
+    <string name="total_price">Total Price</string>
+    <string name="remove">Remove</string>
+    <string name="clear_cart">Clear Cart</string>
+    <string name="shop">Shop</string>
+
+</resources>

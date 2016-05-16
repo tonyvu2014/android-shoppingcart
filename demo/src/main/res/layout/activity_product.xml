@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/green"
+        android:gravity="center"
+        android:padding="@dimen/common_padding"
+        android:textAllCaps="true"
+        android:textSize="@dimen/header_text_size"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvProductDesc"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/llAction"
+        android:layout_below="@id/tvProductName"
+        android:paddingBottom="@dimen/common_padding"
+        android:paddingTop="@dimen/common_padding"/>
+
+    <LinearLayout
+        android:id="@id/llAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center_vertical|end"
+            android:text="@string/quantity"/>
+
+        <Spinner
+            android:id="@+id/spQuantity"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+        <Button
+            android:id="@+id/bOrder"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/orange"
+            android:text="@string/order"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</RelativeLayout>
