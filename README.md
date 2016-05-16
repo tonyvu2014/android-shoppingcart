@@ -26,4 +26,4 @@ Now from anywhere in your application, you can retrieve the shopping cart with
 After retrieving the shopping cart, the library provides various methods to manipulate the shopping
 cart like adding, removing, updating products or clear the entire shopping cart.
 
-For an example on how to use this library, please see the `demo` app module.
+For an example on how to use this library, please see the `demo` (https://github.com/tonyvu2014/android-shoppingcart/tree/master/demo) app module.
