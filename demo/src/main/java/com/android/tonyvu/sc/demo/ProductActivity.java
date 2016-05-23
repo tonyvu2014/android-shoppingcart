@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import android.widget.ImageView;
 import com.android.tonyvu.sc.demo.constant.Constant;
 import com.android.tonyvu.sc.demo.model.Product;
 import com.android.tonyvu.sc.model.Cart;
@@ -21,6 +21,7 @@ public class ProductActivity extends AppCompatActivity {
 
     TextView tvProductName;
     TextView tvProductDesc;
+    ImageView ivProductImage;
     Spinner spQuantity;
     Button bOrder;
     Product product;
@@ -52,6 +53,7 @@ public class ProductActivity extends AppCompatActivity {
     private void retrieveViews() {
         tvProductName = (TextView) findViewById(R.id.tvProductName);
         tvProductDesc = (TextView) findViewById(R.id.tvProductDesc);
+        ivProductImage = (ImageView) findViewById(R.id.ivProductImage);
         spQuantity = (Spinner) findViewById(R.id.spQuantity);
         bOrder = (Button) findViewById(R.id.bOrder);
     }
@@ -59,6 +61,7 @@ public class ProductActivity extends AppCompatActivity {
     private void setProductProperties() {
         tvProductName.setText(product.getName());
         tvProductDesc.setText(product.getDescription());
+        ivProductImage.setImageResource(this.getResources().getIdentifier(product.getImageName(), "drawable", this.getPackageName()));
     }
 
     private void initializeQuantity() {

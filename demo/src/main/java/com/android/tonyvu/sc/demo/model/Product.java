@@ -12,16 +12,18 @@ public class Product implements Saleable, Serializable {
     private String pName;
     private BigDecimal pPrice;
     private String pDescription;
+    private String pImageName;
 
     public Product() {
         super();
     }
 
-    public Product(int pId, String pName, BigDecimal pPrice, String pDescription) {
+    public Product(int pId, String pName, BigDecimal pPrice, String pDescription, String pImageName) {
         setId(pId);
         setName(pName);
         setPrice(pPrice);
         setDescription(pDescription);
+        setImageName(pImageName);
     }
 
     @Override
@@ -76,5 +78,13 @@ public class Product implements Saleable, Serializable {
 
     public void setDescription(String pDescription) {
         this.pDescription = pDescription;
+    }
+
+    public String getImageName() {
+        return pImageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.pImageName = imageName;
     }
 }

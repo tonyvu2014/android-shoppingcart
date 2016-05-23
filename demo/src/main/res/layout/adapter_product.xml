@@ -12,15 +12,21 @@
         android:id="@+id/tvProductName"
         android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:layout_weight="0.65"
+        android:layout_weight="0.50"
         android:gravity="center"
         android:text=""/>
+
+    <ImageView android:id="@+id/ivProductImage"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/tvProductPrice"
         android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:layout_weight="0.35"
+        android:layout_weight="0.25"
         android:gravity="center"
         android:text=""/>
 </LinearLayout>

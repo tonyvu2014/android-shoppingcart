@@ -24,11 +24,19 @@
     <TextView
         android:id="@+id/tvProductDesc"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/llAction"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvProductName"
         android:paddingBottom="@dimen/common_padding"
         android:paddingTop="@dimen/common_padding"/>
+
+    <ImageView android:id="@+id/ivProductImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/llAction"
+        android:layout_below="@id/tvProductDesc"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"/>
 
     <LinearLayout
         android:id="@id/llAction"
