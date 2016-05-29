@@ -1,5 +1,6 @@
 package com.android.tonyvu.sc.demo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.tonyvu.sc.demo.adapter.CartItemAdapter;
+import com.android.tonyvu.sc.demo.constant.Constant;
 import com.android.tonyvu.sc.demo.model.CartItem;
 import com.android.tonyvu.sc.demo.model.Product;
 import com.android.tonyvu.sc.model.Cart;
@@ -41,7 +43,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
         final Cart cart = CartHelper.getCart();
         final TextView tvTotalPrice = (TextView) findViewById(R.id.tvTotalPrice);
-        tvTotalPrice.setText(String.valueOf(cart.getTotalPrice()));
+        tvTotalPrice.setText(Constant.CURRENCY+String.valueOf(cart.getTotalPrice().setScale(2, BigDecimal.ROUND_HALF_UP)));
 
         lvCartItems.addHeaderView(layoutInflater.inflate(R.layout.cart_header, lvCartItems, false));
 
@@ -60,7 +62,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 cart.clear();
                 cartItemAdapter.updateCartItems(getCartItems(cart));
                 cartItemAdapter.notifyDataSetChanged();
-                tvTotalPrice.setText(String.valueOf(cart.getTotalPrice()));
+                tvTotalPrice.setText(Constant.CURRENCY+String.valueOf(cart.getTotalPrice().setScale(2, BigDecimal.ROUND_HALF_UP)));
             }
         });
 

@@ -1,5 +1,6 @@
 package com.android.tonyvu.sc.demo.adapter;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.tonyvu.sc.demo.R;
+import com.android.tonyvu.sc.demo.constant.Constant;
 import com.android.tonyvu.sc.demo.model.Product;
 
 public class ProductAdapter extends BaseAdapter {
@@ -67,7 +69,7 @@ public class ProductAdapter extends BaseAdapter {
 
         final Product product = getItem(position);
         tvName.setText(product.getName());
-        tvPrice.setText(String.valueOf(product.getPrice()));
+        tvPrice.setText(Constant.CURRENCY+String.valueOf(product.getPrice().setScale(2, BigDecimal.ROUND_HALF_UP)));
         Log.d(TAG, "Context package name: " + context.getPackageName());
         ivImage.setImageResource(context.getResources().getIdentifier(
                 product.getImageName(), "drawable", context.getPackageName()));

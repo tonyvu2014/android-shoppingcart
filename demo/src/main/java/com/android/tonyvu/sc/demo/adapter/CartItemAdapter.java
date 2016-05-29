@@ -1,5 +1,6 @@
 package com.android.tonyvu.sc.demo.adapter;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.android.tonyvu.sc.demo.R;
+import com.android.tonyvu.sc.demo.constant.Constant;
 import com.android.tonyvu.sc.demo.model.CartItem;
 import com.android.tonyvu.sc.model.Cart;
 import com.android.tonyvu.sc.util.CartHelper;
@@ -71,9 +73,9 @@ public class CartItemAdapter extends BaseAdapter {
         final Cart cart = CartHelper.getCart();
         final CartItem cartItem = getItem(position);
         tvName.setText(cartItem.getProduct().getName());
-        tvUnitPrice.setText(String.valueOf(cartItem.getProduct().getPrice()));
+        tvUnitPrice.setText(Constant.CURRENCY+String.valueOf(cartItem.getProduct().getPrice().setScale(2, BigDecimal.ROUND_HALF_UP)));
         tvQuantity.setText(String.valueOf(cartItem.getQuantity()));
-        tvPrice.setText(String.valueOf(cart.getCost(cartItem.getProduct())));
+        tvPrice.setText(Constant.CURRENCY+String.valueOf(cart.getCost(cartItem.getProduct()).setScale(2, BigDecimal.ROUND_HALF_UP)));
         return convertView;
     }
 
