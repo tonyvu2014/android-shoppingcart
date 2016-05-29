@@ -3,6 +3,8 @@ package com.android.tonyvu.sc.demo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,6 +39,9 @@ public class ProductActivity extends AppCompatActivity {
 
         Log.d(TAG, "Product hashCode: " + product.hashCode());
 
+        //Set Shopping Cart link
+        setShoppingCartLink();
+
         //Retrieve views
         retrieveViews();
 
@@ -48,6 +53,20 @@ public class ProductActivity extends AppCompatActivity {
 
         //On ordering of product
         onOrderProduct();
+    }
+
+    private void setShoppingCartLink() {
+        TextView tvViewShoppingCart = (TextView)findViewById(R.id.tvViewShoppingCart);
+        SpannableString content = new SpannableString(getText(R.string.shopping_cart));
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        tvViewShoppingCart.setText(content);
+        tvViewShoppingCart.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductActivity.this, ShoppingCartActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void retrieveViews() {

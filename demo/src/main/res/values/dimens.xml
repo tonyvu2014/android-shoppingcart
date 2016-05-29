@@ -6,5 +6,6 @@
     <dimen name="header_text_size">16sp</dimen>
     <dimen name="product_list_header_text_size">14sp</dimen>
     <dimen name="common_padding">5dp</dimen>
+    <dimen name="small_header_text_size">14sp</dimen>
 
 </resources>

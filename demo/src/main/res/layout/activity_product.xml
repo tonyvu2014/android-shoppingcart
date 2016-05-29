@@ -9,11 +9,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
+    <TextView android:id="@+id/tvViewShoppingCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/blue"
+        android:gravity="center"
+        android:paddingBottom="@dimen/common_padding"
+        android:paddingTop="@dimen/common_padding"
+        android:text="@string/shopping_cart"
+        android:textSize="@dimen/small_header_text_size"/>
+
     <TextView
         android:id="@+id/tvProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/tvViewShoppingCart"
         android:background="@color/green"
         android:gravity="center"
         android:padding="@dimen/common_padding"
