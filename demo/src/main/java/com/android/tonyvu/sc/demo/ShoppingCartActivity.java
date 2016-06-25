@@ -1,11 +1,7 @@
 package com.android.tonyvu.sc.demo;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,6 +21,12 @@ import com.android.tonyvu.sc.demo.model.Product;
 import com.android.tonyvu.sc.model.Cart;
 import com.android.tonyvu.sc.model.Saleable;
 import com.android.tonyvu.sc.util.CartHelper;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class ShoppingCartActivity extends AppCompatActivity {
     private static final String TAG = "ShoppingCartActivity";
@@ -73,13 +76,36 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        lvCartItems.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                new AlertDialog.Builder(ShoppingCartActivity.this)
+                        .setTitle(getResources().getString(R.string.delete_item))
+                        .setMessage(getResources().getString(R.string.delete_item_message))
+                        .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                List<CartItem> cartItems = getCartItems(cart);
+                                cart.remove(cartItems.get(position-1).getProduct());
+                                cartItems.remove(position-1);
+                                cartItemAdapter.updateCartItems(cartItems);
+                                cartItemAdapter.notifyDataSetChanged();
+                                tvTotalPrice.setText(Constant.CURRENCY+String.valueOf(cart.getTotalPrice().setScale(2, BigDecimal.ROUND_HALF_UP)));
+                            }
+                        })
+                        .setNegativeButton(getResources().getString(R.string.no), null)
+                        .show();
+                return false;
+            }
+        });
     }
 
     private List<CartItem> getCartItems(Cart cart) {
         List<CartItem> cartItems = new ArrayList<CartItem>();
         Log.d(TAG, "Current shopping cart: " + cart);
 
-        Map<Saleable, Integer> itemMap = (Map<Saleable, Integer>) cart.getItemWithQuantity();
+        Map<Saleable, Integer> itemMap = cart.getItemWithQuantity();
 
         for (Entry<Saleable, Integer> entry : itemMap.entrySet()) {
             CartItem cartItem = new CartItem();

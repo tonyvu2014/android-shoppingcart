@@ -16,5 +16,9 @@
     <string name="remove">Remove</string>
     <string name="clear_cart">Clear Cart</string>
     <string name="shop">Shop</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="delete_item_message">Are you sure you want to delete this item?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>
