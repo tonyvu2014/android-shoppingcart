@@ -99,6 +99,20 @@ public class ShoppingCartActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        lvCartItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle = new Bundle();
+                List<CartItem> cartItems = getCartItems(cart);
+                Product product = cartItems.get(position-1).getProduct();
+                Log.d(TAG, "Viewing product: " + product.getName());
+                bundle.putSerializable("product", product);
+                Intent intent = new Intent(ShoppingCartActivity.this, ProductActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     private List<CartItem> getCartItems(Cart cart) {
